@@ -10,5 +10,4 @@ class arbol:
         if self.raiz is None:
             self.raiz = nuevo
             return
-
-    
+#por el momento estamos analizando con la creacion inicial de nodos donde nos estamos basando en lo inicial de listas simples
