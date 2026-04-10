@@ -1,23 +1,24 @@
-class Nodo:
+class nodo:
     def __init__(self, valor):
-        self.valor = valor
+        self.dato = dato
         self.padre = None
         self.siguiente = None  # lista enlazada
 
 
-class Arbol:
+class arbol:
     def __init__(self):
         self.raiz = None
         self.cabeza = None
 
-    def crear_nodo(self, valor, valor_padre=None):
-        nuevo = Nodo(valor)
+    def crear_nodo(self, dato):
+        dato_padre=None
+        nuevo = nodo(dato)
 
-        # Árbol vacío → crear raíz
+        # comienzo creando la raiz
         if self.raiz is None:
             self.raiz = nuevo
             self.cabeza = nuevo
-            print("Raíz creada")
+            print("raiz creada")
             return
 
         # Buscar el padre
@@ -25,13 +26,13 @@ class Arbol:
         padre = None
 
         while actual is not None:
-            if actual.valor == valor_padre:
+            if actual.dato == dato_padre:
                 padre = actual
                 break
             actual = actual.siguiente
 
         if padre is None:
-            print("Padre no encontrado")
+            print("padre no encontrado")
             return
 
         nuevo.padre = padre
@@ -43,7 +44,7 @@ class Arbol:
             actual = actual.siguiente
         actual.siguiente = nuevo
 
-    # a) Peso
+    #Peso
     def peso(self):
         contador = 0
         actual = self.cabeza
@@ -54,7 +55,7 @@ class Arbol:
 
         return contador
 
-    # c) Altura
+    # Altura
     def altura(self):
         if self.raiz is None:
             return 0
@@ -64,12 +65,10 @@ class Arbol:
 
         while actual is not None:
             altura = 0
-            nodo_temp = actual
-
-            while nodo_temp.padre is not None:
+            nodo_act = actual
+            while nodo_act.padre is not None:
                 altura += 1
-                nodo_temp = nodo_temp.padre
-
+                nodo_act = nodo_act.padre
             if altura > max_altura:
                 max_altura = altura
 
@@ -77,7 +76,7 @@ class Arbol:
 
         return max_altura + 1
 
-    # b) Orden
+    #Orden
     def orden(self):
         max_hijos = 0
         actual = self.cabeza
@@ -98,7 +97,7 @@ class Arbol:
 
         return max_hijos
 
-#Menu
+#Menu y esto no es necesario explicarlo ya que es solo llamar las funciones
 arbol = Arbol()
 
 while True:
@@ -116,28 +115,28 @@ while True:
             valor = input("Valor del nodo: ")
 
             if arbol.raiz is None:
-                arbol.crear_nodo(valor)
+                arbol.crear_nodo(dato)
             else:
                 padre = input("Valor del padre: ")
-                arbol.crear_nodo(valor, padre)
+                arbol.crear_nodo(dato)
 
-            continuar = input("¿Desea agregar otro nodo? (s/n): ").lower()
-            if continuar != "s":
+            seguir = input("Desea agregar otro nodo? (s/n): ").lower()
+            if seguir != "s":
                 break
 
     elif opcion == 2:
-        print("Peso del árbol:", arbol.peso())
+        print("Peso del arbol:", arbol.peso())
 
     elif opcion == 3:
-        print("Altura del árbol:", arbol.altura())
+        print("Altura del arbol:", arbol.altura())
 
     elif opcion == 4:
-        print("Orden del árbol:", arbol.orden())
+        print("Orden del arbol:", arbol.orden())
 
     elif opcion == 5:
-        print("Saliendo...")
+        print("saliendo es saliendo")
         break
 
     else:
-        print("Opción inválida")
+        print("opcion no valida")
 #por el momento estamos analizando con la creacion inicial de nodos donde nos estamos basando en lo inicial de listas simples
