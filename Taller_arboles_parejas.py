@@ -1,3 +1,4 @@
+
 class nodo:
     def __init__(self, valor):
         self.dato = dato
@@ -46,14 +47,13 @@ class arbol:
 
     #Peso
     def peso(self):
-        contador = 0
+        contadorPeso = 0
         actual = self.cabeza
 
         while actual is not None:
-            contador += 1
+            contadorPeso += 1
             actual = actual.siguiente
-
-        return contador
+        return contadorPeso
 
     # Altura
     def altura(self):
@@ -97,7 +97,7 @@ class arbol:
 
         return max_hijos
 
-#Menu y esto no es necesario explicarlo ya que es solo llamar las funciones
+#Menu que llama las funciones ya definidas anteriormente:
 arbol = Arbol()
 
 while True:
