@@ -1,3 +1,5 @@
+# David Cediel 2250933
+# Mateo Amaya 2250921
 from bigtree import Node
 
 # Crear nodo raíz
