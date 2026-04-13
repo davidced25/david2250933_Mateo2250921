@@ -1,4 +1,5 @@
-
+# David Cediel 2250933
+# Mateo Amaya 2250921
 class nodo:
     def __init__(self, valor):
         self.dato = dato
