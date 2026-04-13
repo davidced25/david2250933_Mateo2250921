@@ -140,4 +140,3 @@ while True:
 
     else:
         print("opcion no valida")
-#por el momento estamos analizando con la creacion inicial de nodos donde nos estamos basando en lo inicial de listas simples
